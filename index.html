@@ -1,7 +1,9 @@
 
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-.app{background:#111318;border-radius:16px;padding:28px 24px 32px;font-family:var(--font-sans);}
+html,body{background:#111318;min-height:100%;}
+.app{background:#111318;border-radius:0;padding:28px 24px 32px;font-family:var(--font-sans);max-width:900px;margin:0 auto;}
 .app-title{font-size:18px;font-weight:500;background:linear-gradient(90deg,#a78bfa,#60a5fa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.04em;}
 .app-title i{-webkit-text-fill-color:#a78bfa;font-size:20px;}
 .preset-row{display:flex;gap:8px;margin-bottom:18px;}
@@ -56,7 +58,24 @@
 .x-post-btn{padding:9px 20px;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;background:#000;border:1px solid #333;color:#fff;transition:opacity .15s;}
 .x-post-btn:hover{opacity:.8;}
 @media(max-width:600px){
-  .app{padding:18px 14px 24px;}
+  .app{padding:16px 12px 28px;}
+  .input-row{grid-template-columns:1fr 1fr;}
+  .input-row .field:nth-child(5){grid-column:1/-1;}
+  .cyber-input{font-size:16px;padding:12px;}
+  .field label{font-size:12px;}
+  .preset-row{flex-direction:column;}
+  .cyber-btn{padding:12px;width:100%;}
+  .cyber-select{font-size:15px;padding:12px;}
+  .cards-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .cyber-card{padding:14px 12px;}
+  .cyber-card .clabel{font-size:12px;}
+  .cyber-card .cvalue{font-size:22px;}
+  .cyber-card .csub{font-size:11px;}
+  .calc-btn{font-size:16px;padding:16px;}
+  #chartWrap{height:200px;}
+  .legend{gap:8px;font-size:12px;}
+  .x-post-btn{width:100%;padding:14px;font-size:15px;}
+}
   .input-row{grid-template-columns:repeat(2,1fr);}
   .input-row .field:last-child{grid-column:1/-1;}
   .cards-grid{grid-template-columns:repeat(2,1fr);}
@@ -206,7 +225,7 @@ function postToX(){
   const score=document.getElementById('my_score').value||'?';
   const rank=document.getElementById('r-overall-rank').textContent||'?';
   const hensachi=document.getElementById('r-hensachi-overall').textContent||'?';
-  const url='(URL)';
+  const url='https://exam-ranking-estimation.vercel.app/';
   const text=`私の点数は${score}点で${school}内${rank}で偏差値${hensachi}でした ${url}`;
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank');
 }
