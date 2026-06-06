@@ -1,4 +1,7 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>入試順位推定</title>
 <meta name="description" content="受験者データから自分の順位・偏差値を正規分布で推定するツール">
@@ -96,9 +99,10 @@ html,body{background:#111318;min-height:100%;}
   .legend{gap:10px;font-size:11px;}
 }
 </style>
-
+</head>
+<body>
 <div class="app">
-  <h2 class="sr-only">大学入試順位推定ツール</h2>
+  <h2 style="color:#ffffff;font-size:22px;font-weight:700;margin-bottom:16px;letter-spacing:.04em;">大学入試順位推定ツール</h2>
   <div class="app-title">
     <i class="ti ti-chart-bell-curve" aria-hidden="true"></i>
     大学入試 / 順位推定
@@ -394,3 +398,5 @@ function drawChart(avg,sd,ms,minPt,n,pap){
   document.getElementById('chartLegend').innerHTML=`<span><span class="legend-dot" style="background:rgba(255,80,60,.7)"></span>不合格者</span><span><span class="legend-dot" style="background:rgba(60,230,140,.6)"></span>合格者</span><span><span class="legend-dot" style="background:#818cf8;border-radius:50%"></span>自分の点数</span><span><span class="legend-dot" style="background:#f87171;"></span>合格最低点</span><span><span class="legend-dot" style="background:#4ade80;"></span>合格者平均点</span>`;
 }
 </script>
+</body>
+</html>
